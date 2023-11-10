@@ -7,21 +7,9 @@ import Footer from "../../components/footer/view";
 import BusinessContents from "../../components/businessContents/view";
 
 const NavButtons = [
-  {
-    label: "Home",
-    variant: "home",
-    active: false
-  },
-  {
-    label: "Search",
-    variant: "search",
-    active: false
-  },
-  {
-    label: "About Us",
-    variant: "about",
-    active: false
-  }
+  { label: "Home", variant: "home", active: false },
+  { label: "Search", variant: "search", active: false },
+  { label: "About Us", variant: "about", active: false }
 ];
 
 const TabButtons = [
