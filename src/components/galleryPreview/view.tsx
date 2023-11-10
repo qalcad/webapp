@@ -18,7 +18,7 @@ export default function GalleryPreview({
         imageSrcs.length > 0 && "cursor-pointer"
       }`}
     >
-      <div className="grow grid grid-cols-1 grid-rows-1 md:grid-cols-4 md:grid-rows-2 w-full h-[190px]">
+      <div className="grow grid gap-px grid-cols-1 grid-rows-1 md:grid-cols-4 md:grid-rows-2 w-full h-[190px]">
         <div className="col-span-2 row-span-2 flex relative">
           <Image
             src={imageSrcs[0] || BlankImageSVG}
@@ -39,9 +39,9 @@ export default function GalleryPreview({
         </div>
         <div className="justify-center relative hidden md:flex">
           <Image fill={true} src={imageSrcs[4] || BlankImageSVG} alt="image5" />
-          <div className="w-full h-full bg-stone-900 bg-opacity-10 absolute flex justify-center">
+          <div className="w-full h-full bg-stone-900 bg-opacity-40 absolute flex justify-center">
             <div className="p-2.5 justify-center items-center gap-2.5 flex">
-              <div className="text-zinc-500 text-base font-medium leading-snug">
+              <div className="text-neutral-200 text-base font-medium leading-snug">
                 {remainingImgsCount || 0}+
               </div>
             </div>
