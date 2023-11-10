@@ -23,7 +23,7 @@ export default function NavButton({ label, variant }: Props) {
     }
   };
   return (
-    <button className="h-10 px-7 py-2.5 rounded-lg justify-center items-center flex hover:bg-qgray1">
+    <button className="hover:transition-all transition-all h-10 px-7 py-2.5 rounded-lg justify-center items-center flex hover:bg-gray-200 active:bg-gray-300">
       <div className="w-6 h-6 relative">{getVariantIcon(label, variant)}</div>
     </button>
   );

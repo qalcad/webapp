@@ -1,7 +1,5 @@
 /** @type {import('tailwindcss').Config} */
 
-import colors from "tailwindcss/colors";
-
 module.exports = {
   content: [
     "./app/**/*.{js,ts,jsx,tsx,mdx}", // Note the addition of the `app` directory.
@@ -11,12 +9,11 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx,mdx}"
   ],
   theme: {
-    extend: {},
-    colors: Object.assign(colors, {
-      transparent: "transparent",
-      qgray1: "#EBEDF0",
-      qgray2: "#DEE2E6"
-    })
+    extend: {
+      fontFamily: {
+        kanit: ["kanit", "ui-sans-serif", "system-ui"]
+      }
+    }
   },
   plugins: []
 };
