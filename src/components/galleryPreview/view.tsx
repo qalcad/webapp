@@ -19,40 +19,26 @@ export default function GalleryPreview({
       }`}
     >
       <div className="grow grid grid-cols-1 grid-rows-1 md:grid-cols-4 md:grid-rows-2 w-full h-[190px]">
-        <div className="col-span-2 row-span-2 flex justify-center">
+        <div className="col-span-2 row-span-2 flex relative">
           <Image
-            height={195}
             src={imageSrcs[0] || BlankImageSVG}
             alt="image1"
+            fill={true}
+            objectFit="cover"
+            objectPosition="center"
           />
         </div>
-        <div className="justify-center hidden md:flex">
-          <Image
-            height={97.5}
-            src={imageSrcs[1] || BlankImageSVG}
-            alt="image2"
-          />
+        <div className="justify-center hidden md:flex relative">
+          <Image src={imageSrcs[1] || BlankImageSVG} alt="image2" fill={true} />
         </div>
-        <div className="justify-center hidden md:flex">
-          <Image
-            height={97.5}
-            src={imageSrcs[2] || BlankImageSVG}
-            alt="image3"
-          />
+        <div className="justify-center hidden md:flex relative">
+          <Image fill={true} src={imageSrcs[2] || BlankImageSVG} alt="image3" />
         </div>
-        <div className="justify-center hidden md:flex">
-          <Image
-            height={97.5}
-            src={imageSrcs[3] || BlankImageSVG}
-            alt="image4"
-          />
+        <div className="justify-center hidden md:flex relative">
+          <Image fill={true} src={imageSrcs[3] || BlankImageSVG} alt="image4" />
         </div>
         <div className="justify-center relative hidden md:flex">
-          <Image
-            height={97.5}
-            src={imageSrcs[4] || BlankImageSVG}
-            alt="image5"
-          />
+          <Image fill={true} src={imageSrcs[4] || BlankImageSVG} alt="image5" />
           <div className="w-full h-full bg-stone-900 bg-opacity-10 absolute flex justify-center">
             <div className="p-2.5 justify-center items-center gap-2.5 flex">
               <div className="text-zinc-500 text-base font-medium leading-snug">
