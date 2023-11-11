@@ -1,18 +1,21 @@
+"use client";
+
 import React from "react";
 import MediaPjo from "../../models/mediaPjo";
 import MediaPreview from "../mediaPreview/view";
 
 export interface Props {
   media: MediaPjo[];
-  remainingImgsCount?: number;
+  onClick?(event: React.MouseEvent<HTMLDivElement>): void;
 }
 
-export default function GalleryPreview({ media, remainingImgsCount }: Props) {
+export default function GalleryPreview({ media, onClick = () => {} }: Props) {
   return (
     <div
       className={`justify-center items-center flex flex-col ${
         media.length > 0 && "cursor-pointer"
       }`}
+      onClick={onClick}
     >
       <div className="grow grid gap-px grid-cols-1 grid-rows-1 md:grid-cols-4 md:grid-rows-2 w-full h-[190px]">
         <div className="col-span-2 row-span-2 flex relative">
@@ -29,13 +32,15 @@ export default function GalleryPreview({ media, remainingImgsCount }: Props) {
         </div>
         <div className="justify-center relative hidden md:flex">
           <MediaPreview media={media[4]} />
-          <div className="w-full h-full bg-stone-900 bg-opacity-40 absolute flex justify-center">
-            <div className="p-2.5 justify-center items-center gap-2.5 flex">
-              <div className="text-neutral-200 text-base font-medium leading-snug">
-                {remainingImgsCount || 0}+
+          {media.length > 5 && (
+            <div className="w-full h-full bg-stone-900 bg-opacity-40 absolute flex justify-center">
+              <div className="p-2.5 justify-center items-center gap-2.5 flex">
+                <div className="text-neutral-200 text-base font-medium leading-snug">
+                  {media.length - 5}+
+                </div>
               </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
       <div className="border-b border-zinc-200 w-full"></div>

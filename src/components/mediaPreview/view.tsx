@@ -21,11 +21,11 @@ export default function MediaPreview({ media }: Props) {
   return (
     <div className="relative w-full h-full flex justify-center items-center">
       <Image
+        className="object-cover	object-center"
         src={src}
         alt="thumbnail"
         fill={true}
-        objectFit="cover"
-        objectPosition="center"
+        sizes="100vw, 100%"
       />
       {media.mime == "video/mp4" && (
         <div className="w-6 h-6 relative opacity-50">

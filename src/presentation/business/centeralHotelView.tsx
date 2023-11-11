@@ -8,9 +8,9 @@ import BusinessContents from "../../components/businessContents/view";
 import Data from "../../dataSources/centralHotel";
 
 const NavButtons = [
-  { label: "Home", variant: "home", active: false },
-  { label: "Search", variant: "search", active: false },
-  { label: "About Us", variant: "about", active: false }
+  { label: "Home", variant: "home", url: "/" },
+  { label: "Search", variant: "search", url: "/search" },
+  { label: "About Us", variant: "about", url: "/about-us" }
 ];
 
 const TabButtons = [
@@ -26,7 +26,7 @@ export default function View() {
     <>
       <Topbar navs={NavButtons} variant="secondary" />
       <GalleryPreview media={Data.gallery} />
-      <BusinessInfo />
+      <BusinessInfo info={Data.businessInfo} />
       <BusinessTabs tabs={TabButtons} />
       <BusinessContents />
       <Footer />
