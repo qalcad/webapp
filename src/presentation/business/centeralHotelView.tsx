@@ -5,6 +5,7 @@ import BusinessInfo from "../../components/businessInfo/view";
 import BusinessTabs from "../../components/businessTabs/view";
 import Footer from "../../components/footer/view";
 import BusinessContents from "../../components/businessContents/view";
+import Data from "../../dataSources/centralHotel";
 
 const NavButtons = [
   { label: "Home", variant: "home", active: false },
@@ -20,22 +21,11 @@ const TabButtons = [
   { label: "Inquiry", variant: "inquiry", active: false, disabled: true }
 ];
 
-const GallerySrcs = [
-  "/uploads/central-hotel/001.jpeg",
-  "/uploads/central-hotel/002.jpeg",
-  "/uploads/central-hotel/003.jpeg",
-  "/uploads/central-hotel/004.jpeg",
-  "/uploads/central-hotel/005.jpeg",
-  "/uploads/central-hotel/006.jpeg",
-  "/uploads/central-hotel/007.jpeg",
-  "/uploads/central-hotel/008.jpeg"
-];
-
 export default function View() {
   return (
     <>
       <Topbar navs={NavButtons} variant="secondary" />
-      <GalleryPreview imageSrcs={GallerySrcs} />
+      <GalleryPreview media={Data.gallery} />
       <BusinessInfo />
       <BusinessTabs tabs={TabButtons} />
       <BusinessContents />
