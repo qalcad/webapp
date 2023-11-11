@@ -1,4 +1,4 @@
-export default interface MediaPjo {
+export default interface MediaDto {
   name?: string;
   url: string;
   thumbnailUrl: string;

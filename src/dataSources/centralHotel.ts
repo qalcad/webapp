@@ -1,5 +1,20 @@
 export default {
-  gallery: [
+  slug: "central-hotel",
+  info: {
+    slug: "central-hotel",
+    name: "Central Hotel",
+    verified: true,
+    slogan: null,
+    businessType: "Hotel",
+    formattedPhoneNumbers: ["+252770768492", "+252770768492"],
+    formattedAddress: "Suuq bacad, Mogadishu",
+    keywords: ["Restaurant", "Coffee", "Wedding hall"],
+    description: `Are you looking for a juicy burger? Instead of patties made using
+      ground meat as in existing handmade burgers, we use 140g |of beef cut
+      daily to provide freshness, and we pursue novelty in burgers with a
+      special gravy sauce.`
+  },
+  media: [
     {
       url: "/uploads/central-hotel/001.jpeg",
       thumbnailUrl: "/uploads/central-hotel/001.jpeg",
@@ -67,23 +82,10 @@ export default {
       mime: "image/jpeg"
     },
     {
-      url: "/uploads/central-hotel/012.jpeg",
-      thumbnailUrl: "/uploads/central-hotel/012.jpeg",
-      extension: ".jpeg",
-      mime: "image/jpeg"
+      url: "/uploads/central-hotel/012.mp4",
+      thumbnailUrl: "/uploads/central-hotel/010.jpeg",
+      extension: ".mp4",
+      mime: "video/mp4"
     }
-  ],
-  businessInfo: {
-    name: "Central Hotel",
-    verified: true,
-    slogan: null,
-    businessType: "Hotel",
-    formattedPhoneNumbers: ["+252770768492", "+252770768492"],
-    formattedAddress: "Suuq bacad, Mogadishu",
-    keywords: ["Restaurant", "Coffee", "Wedding hall"],
-    description: `Are you looking for a juicy burger? Instead of patties made using
-    ground meat as in existing handmade burgers, we use 140g |of beef cut
-    daily to provide freshness, and we pursue novelty in burgers with a
-    special gravy sauce.`
-  }
+  ]
 };

@@ -9,27 +9,28 @@ import { useRouter, usePathname } from "next/navigation";
 export interface Props {
   label: string;
   variant: string;
-  url: string;
+  href: string;
 }
 
-export default function NavButton({ label, variant, url }: Props) {
+export default function NavButton({ label, variant, href }: Props) {
   const router = useRouter();
   const pathname = usePathname();
-  let getVariantIcon = (label: string, variant: string) => {
-    switch (variant) {
-      case "home":
-        return <Image src={HomeSVG} alt={label} />;
-      case "search":
-        return <Image src={SearchSVG} alt={label} />;
-      case "qalcad":
-      default:
-        return <Image src={QalcadSVG} alt={label} />;
-    }
-  };
+  let Icon: React.ReactNode;
+  switch (variant) {
+    case "home":
+      Icon = <Image src={HomeSVG} alt={label} />;
+      break;
+    case "search":
+      Icon = <Image src={SearchSVG} alt={label} />;
+      break;
+    case "qalcad":
+    default:
+      Icon = <Image src={QalcadSVG} alt={label} />;
+  }
 
   const onClick = React.useCallback(
-    async (event: React.MouseEvent<HTMLButtonElement>, url: string) => {
-      if (pathname != url) router.push(url);
+    async (event: React.MouseEvent<HTMLButtonElement>, href: string) => {
+      if (pathname != href) router.push(href);
     },
     [pathname, router]
   );
@@ -37,11 +38,11 @@ export default function NavButton({ label, variant, url }: Props) {
   return (
     <button
       className={`hover:transition-all transition-all h-10 px-7 py-2.5 rounded-lg justify-center items-center flex hover:bg-gray-200 active:bg-gray-300 ${
-        pathname == url ? "bg-gray-200" : ""
+        pathname == href ? "bg-gray-200" : ""
       }`}
-      onClick={(event) => onClick(event, url)}
+      onClick={(event) => onClick(event, href)}
     >
-      <div className="w-6 h-6 relative">{getVariantIcon(label, variant)}</div>
+      <div className="w-6 h-6 relative">{Icon}</div>
     </button>
   );
 }

@@ -4,13 +4,22 @@ import Image from "next/image";
 import VerifiedSVG from "../../../public/images/verified.svg";
 import ShareButton from "../shareButton/view";
 import SimpleClickableInfo from "../simpleClickableInfo/view";
-import BusinessInfoPjo from "../../models/businessInfoPjo";
+import { useRouter, usePathname } from "next/navigation";
+import BusinessInfoDto from "../../models/businessInfoDto";
 
 export interface Props {
-  info: BusinessInfoPjo;
+  info: BusinessInfoDto;
 }
 
 export default function BusinessInfo({ info }: Props) {
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const onMapClick = React.useCallback(async () => {
+    const match = pathname.match(/\/b\/([^\/\s]+)/) || "/b/test";
+    router.push(`${match[0]}/location`);
+  }, [router, pathname]);
+
   return (
     <div className="w-full p-8 flex-col justify-center items-start flex font-kanit">
       <div className="self-stretch justify-start items-center gap-2.5 flex md:flex-row flex-col mb-2.5">
@@ -23,7 +32,9 @@ export default function BusinessInfo({ info }: Props) {
                 </div>
               </div>
             )}
-            <h1 className="text-black text-[32px] font-medium">{info.name}</h1>
+            <h1 className="text-black text-[32px] font-medium">
+              {info.name || ""}
+            </h1>
           </div>
           {info.slogan && (
             <div className="text-gray-700 text-lg font-normal">
@@ -34,37 +45,41 @@ export default function BusinessInfo({ info }: Props) {
         <div className="grow md:block hidden"></div>
         <ShareButton />
       </div>
-      {/*  */}
       <div className="self-stretch py-[5px] justify-start items-start gap-2.5 flex">
         <div className="text-gray-700 text-base font-normal leading-snug">
-          {info.businessType}
+          {info.businessType || ""}
         </div>
       </div>
-      {/*  */}
-      <div className="self-stretch py-[5px] justify-start items-start gap-2.5 flex flex-wrap">
-        <SimpleClickableInfo
-          buttonLabel="Copy"
-          onClick={(_, item) => navigator.clipboard.writeText(item)}
-          items={info.formattedPhoneNumbers}
-        />
-      </div>
-      {/*  */}
-      <div className="self-stretch py-[5px] justify-start items-start gap-2.5 flex flex-wrap">
-        <SimpleClickableInfo
-          buttonLabel="Map"
-          items={[info.formattedAddress]}
-        />
-      </div>
-      {/*  */}
-      <div className="self-stretch py-[5px] justify-start items-start gap-2.5 flex flex-wrap">
-        {info.keywords.join(", ")}
-      </div>
-      {/*  */}
-      <div className="self-stretch py-[5px] justify-start items-start gap-2.5 flex flex-wrap">
-        <div className="self-stretch text-gray-700 text-base font-normal leading-snug">
-          {info.description}
+      {info.formattedPhoneNumbers && (
+        <div className="self-stretch py-[5px] justify-start items-start gap-2.5 flex flex-wrap">
+          <SimpleClickableInfo
+            buttonLabel="Copy"
+            onClick={(_, item) => navigator.clipboard.writeText(item)}
+            items={info.formattedPhoneNumbers}
+          />
         </div>
-      </div>
+      )}
+      {info.formattedAddress && (
+        <div className="self-stretch py-[5px] justify-start items-start gap-2.5 flex flex-wrap">
+          <SimpleClickableInfo
+            buttonLabel="Map"
+            onClick={onMapClick}
+            items={[info.formattedAddress]}
+          />
+        </div>
+      )}
+      {info.keywords && (
+        <div className="self-stretch py-[5px] justify-start items-start gap-2.5 flex flex-wrap">
+          {info.keywords.join(", ")}
+        </div>
+      )}
+      {info.description && (
+        <div className="self-stretch py-[5px] justify-start items-start gap-2.5 flex flex-wrap">
+          <div className="self-stretch text-gray-700 text-base font-normal leading-snug">
+            {info.description}
+          </div>
+        </div>
+      )}
     </div>
   );
 }

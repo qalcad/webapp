@@ -1,5 +1,5 @@
 export default [
-  { label: "Home", variant: "home", url: "/" },
-  { label: "Search", variant: "search", url: "/search" },
-  { label: "About Us", variant: "about", url: "/about-us" }
+  { label: "Home", variant: "home", href: "/" },
+  { label: "Search", variant: "search", href: "/search" },
+  { label: "About Us", variant: "about", href: "/about-us" }
 ];

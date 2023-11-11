@@ -1,15 +1,24 @@
 "use client";
 
 import React from "react";
-import MediaPjo from "../../models/mediaPjo";
 import MediaPreview from "../mediaPreview/view";
+import { useRouter, usePathname } from "next/navigation";
+import MediaDto from "../../models/mediaDto";
 
 export interface Props {
-  media: MediaPjo[];
-  onClick?(event: React.MouseEvent<HTMLDivElement>): void;
+  media: MediaDto[];
 }
 
-export default function GalleryPreview({ media, onClick = () => {} }: Props) {
+export default function GalleryPreview({ media }: Props) {
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const onClick = React.useCallback(async () => {
+    if (media.length < 1) return;
+    const match = pathname.match(/\/b\/([^\/\s]+)/) || "/b/test";
+    router.push(`${match[0]}/gallery`);
+  }, [media, router, pathname]);
+
   return (
     <div
       className={`justify-center items-center flex flex-col ${
