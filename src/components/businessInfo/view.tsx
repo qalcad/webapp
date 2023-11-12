@@ -23,8 +23,8 @@ export default function BusinessInfo({ info }: Props) {
   return (
     <div className="w-full p-8 flex-col justify-center items-start flex font-kanit">
       <div className="self-stretch justify-start items-center gap-2.5 flex md:flex-row flex-col mb-2.5">
-        <div className="justify-start items-center md:items-baseline gap-2.5 flex md:flex-row flex-col">
-          <div className="flex items-baseline gap-2.5">
+        <div className="justify-start items-center md:items-baseline gap-2.5 flex flex-wrap md:flex-row flex-col">
+          <div className="flex flex-wrap items-baseline gap-2.5">
             {info.verified && (
               <div className="p-[5px] justify-center items-center flex">
                 <div className="w-6 h-6 relative">

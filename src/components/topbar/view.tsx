@@ -8,9 +8,9 @@ export interface IProps {
 
 export default function Topbar({ navs }: IProps) {
   return (
-    <div className="justify-center items-center flex flex-col bg-white">
-      <div className="h-14 px-4 justify-start items-center gap-4 flex">
-        <div className="justify-start items-center gap-2.5 inline-flex">
+    <div className="w-full justify-center items-center flex flex-col bg-white">
+      <div className="py-2 px-4 justify-start items-center gap-4 flex ">
+        <div className="justify-center items-center gap-2.5 flex  overflow-x-auto flex-wrap">
           {navs.map((item, index) => (
             <NavButton key={index} {...item} />
           ))}

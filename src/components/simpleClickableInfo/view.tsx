@@ -14,7 +14,7 @@ export default function SimpleClickableInfo({
   return (
     <>
       {items.map((item, index) => (
-        <div className="flex gap-2.5" key={index}>
+        <div className="flex flex-wrap gap-2.5" key={index}>
           <div className="text-gray-700 text-base font-normal leading-snug">
             {item}
           </div>
