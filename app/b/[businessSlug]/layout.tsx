@@ -5,7 +5,6 @@ import centralHotelDS from "../../../src/dataSources/centralHotel";
 import { notFound } from "next/navigation";
 
 async function getData(businessSlug: string) {
-  console.log(businessSlug);
   if (businessSlug != "central-hotel") {
     // This will activate the closest `error.js` Error Boundary
     notFound();

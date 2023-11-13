@@ -38,11 +38,7 @@ export default function Footer() {
         </div>
         <div className="sjustify-center items-center gap-4 flex">
           <div className="w-10 h-10 relative">
-            <div className="w-10 h-10 left-0 top-0 absolute">
-              <div className="w-10 h-10 left-0 top-0 absolute bg-zinc-300 rounded-full">
-                <Image src={LogoSVG} alt="logo" />
-              </div>
-            </div>
+            <Image src={LogoSVG} alt="logo" />
           </div>
           <div className="text-gray-700 text-base font-medium font-['Kanit'] leading-snug">
             QALCAD

@@ -21,7 +21,7 @@ export default function View({
       <GalleryPreview media={data.media} />
       <BusinessInfo info={data.info} />
       <BusinessTabs tabs={BusinessTabButtonsDS} />
-      {React.cloneElement(children, { data })}
+      {children}
       <Footer />
     </>
   );

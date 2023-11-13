@@ -1,7 +1,7 @@
 export default interface BusinessInfoDto {
   name?: string;
   verified?: boolean;
-  slogan?: string;
+  slogan?: string | null;
   businessType?: string;
   formattedPhoneNumbers?: string[];
   formattedAddress?: string;
