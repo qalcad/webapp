@@ -14,6 +14,9 @@ export default {
       daily to provide freshness, and we pursue novelty in burgers with a
       special gravy sauce.`
   },
+  address: {
+    coords: { lat: 2.05481, lng: 45.339937 }
+  },
   media: [
     {
       url: "/uploads/central-hotel/001.jpeg",
