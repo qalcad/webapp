@@ -9,7 +9,9 @@ export interface Props {
   media: MediaDto[];
   selected: number;
   open: boolean;
-  onClose(event: React.MouseEvent<HTMLElement>): void;
+  onClose(event: React.MouseEvent<HTMLButtonElement>): void;
+  onNext(event: React.MouseEvent<HTMLButtonElement>): void;
+  onPrevious(event: React.MouseEvent<HTMLButtonElement>): void;
 }
 
 export default function GalleryViewer({

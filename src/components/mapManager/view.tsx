@@ -41,7 +41,7 @@ export default function MapManager({ coords, label }: Props) {
   }, []);
 
   return (
-    <div className="flex w-full min-h-[190px] md:min-h-[380px]">
+    <div className="flex w-full min-h-[190px] md:min-h-[380px] bg-stone-200">
       <div className="w-full" ref={mapRef} />
     </div>
   );
