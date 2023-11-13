@@ -17,6 +17,13 @@ export default {
   address: {
     coords: { lat: 2.05481, lng: 45.339937 }
   },
+  home: {
+    type: "block",
+    children: [
+      { type: "image", src: "/uploads/central-hotel/013.jpeg" },
+      { type: "text", text: "Sample text." }
+    ]
+  },
   media: [
     {
       url: "/uploads/central-hotel/001.jpeg",

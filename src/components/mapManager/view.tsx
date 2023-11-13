@@ -2,7 +2,6 @@
 
 import React from "react";
 import { Loader } from "@googlemaps/js-api-loader";
-import googleServices from "../../dataSources/googleServices";
 
 export interface Props {
   coords: { lat: number; lng: number };
@@ -13,7 +12,7 @@ export default function MapManager({ coords, label }: Props) {
 
   React.useEffect(() => {
     const loader = new Loader({
-      apiKey: googleServices.mapsAPIKey,
+      apiKey: process.env.googleAPIKey || "",
       version: "weekly"
     });
     loader.load().then(async () => {
