@@ -3,14 +3,9 @@ export interface TextDto {
   text: string;
 }
 
-export interface ImageDto {
-  type: string;
-  src: string;
-}
-
 export interface BlockDto {
   type: string;
-  children: Array<BlockDto | TextDto | ImageDto>;
+  children: Array<BlockDto | TextDto>;
 }
 
 export default interface BusinessHomeDto extends BlockDto {}
