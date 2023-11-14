@@ -2,10 +2,10 @@
 import React from "react";
 import Image from "next/image";
 import VerifiedSVG from "../../../public/images/verified.svg";
-import ShareButton from "../shareButton/view";
-import SimpleClickableInfo from "../simpleClickableInfo/view";
+import ShareButton from "../../shareButton/view";
+import SimpleClickableInfo from "../../simpleClickableInfo/view";
 import { useRouter, usePathname } from "next/navigation";
-import BusinessInfoDto from "../../models/businessInfoDto";
+import BusinessInfoDto from "../../../models/businessInfoDto";
 
 export interface Props {
   info: BusinessInfoDto;

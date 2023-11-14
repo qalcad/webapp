@@ -1,12 +1,12 @@
 import React from "react";
 import Topbar from "../../components/topbar/view";
 import GalleryPreview from "../../components/galleryPreview/view";
-import BusinessInfo from "../../components/businessInfo/view";
 import BusinessTabs from "../../components/businessTabs/view";
 import Footer from "../../components/footer/view";
 import NavButtonsDS from "../../dataSources/navButtons";
 import BusinessTabButtonsDS from "../../dataSources/businessTabButtons";
 import BusinessDto from "../../models/businessDto";
+import BusinessBrief from "../../components/businessBrief/view";
 
 export default function View({
   data,
@@ -19,7 +19,7 @@ export default function View({
     <>
       <Topbar navs={NavButtonsDS} variant="secondary" />
       <GalleryPreview media={data.media} />
-      <BusinessInfo info={data.info} />
+      <BusinessBrief info={data.info} />
       <BusinessTabs tabs={BusinessTabButtonsDS} />
       {children}
       <Footer />

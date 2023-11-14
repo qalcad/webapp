@@ -1,3 +1,5 @@
+import BusinessHomeDto from "./businessHomeDto";
+
 export default interface BusinessInfoDto {
   name?: string;
   verified?: boolean;
@@ -7,4 +9,5 @@ export default interface BusinessInfoDto {
   formattedAddress?: string;
   keywords?: string[];
   description?: string;
+  home: BusinessHomeDto
 }

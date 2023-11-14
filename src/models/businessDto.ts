@@ -8,5 +8,4 @@ export default interface BusinessDto {
   info: BusinessInfoDto;
   media: MediaDto[];
   address: AddressDto;
-  home: BusinessHomeDto;
 }
