@@ -38,10 +38,7 @@ export default function GalleryList({ media }: Props) {
   );
   return (
     <>
-      <div
-        id="gallery"
-        className="w-full p-8 grid grid-cols-2 md:grid-cols-4 gap-2.5"
-      >
+      <div className="w-full p-8 grid grid-cols-2 md:grid-cols-4 gap-2.5">
         {media.map((item, index) => (
           <button
             onClick={(event: React.MouseEvent<HTMLButtonElement>) =>

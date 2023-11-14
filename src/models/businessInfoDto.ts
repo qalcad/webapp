@@ -9,5 +9,5 @@ export default interface BusinessInfoDto {
   formattedAddress?: string;
   keywords?: string[];
   description?: string;
-  home: BusinessHomeDto
+  home?: BusinessHomeDto;
 }

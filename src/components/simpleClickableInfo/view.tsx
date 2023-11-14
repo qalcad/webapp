@@ -12,7 +12,7 @@ export default function SimpleClickableInfo({
   onClick = () => {}
 }: Props) {
   return (
-    <>
+    <div className="shrink grow basis-0 flex leading-snug flex-wrap gap-2.5">
       {items.map((item, index) => (
         <div className="flex flex-wrap gap-2.5" key={index}>
           <div className="text-gray-700 text-base font-normal leading-snug">
@@ -25,12 +25,10 @@ export default function SimpleClickableInfo({
             {buttonLabel}
           </button>
           {index != items.length - 1 && (
-            <div className="text-gray-700 text-base font-medium leading-snug">
-              -
-            </div>
+            <div className="text-gray-700 text-base leading-snug">•</div>
           )}
         </div>
       ))}
-    </>
+    </div>
   );
 }
