@@ -30,7 +30,7 @@ export default function GalleryViewer({
         <video
           controls
           autoPlay
-          src={media[selected].url}
+          src={`${process.env.basePath}${media[selected].url}`}
           className="object-contain absolute inset-0 h-full w-full"
         />
       );
@@ -38,7 +38,7 @@ export default function GalleryViewer({
     default:
       selectedMedia = (
         <img
-          src={media[selected].url}
+          src={`${process.env.basePath}${media[selected].url}`}
           alt="image"
           className="object-contain absolute inset-0 h-full w-full"
         />

@@ -16,11 +16,11 @@ export default function MediaPreview({ media }: Props) {
   if (media) {
     switch (media.mime) {
       case "video/mp4":
-        src = media.thumbnailUrl || BlankVideoSVG;
+        src = `${process.env.basePath}${media.thumbnailUrl}` || BlankVideoSVG;
         mime = media.mime;
         break;
       default:
-        src = media.thumbnailUrl || BlankImageSVG;
+        src = `${process.env.basePath}${media.thumbnailUrl}` || BlankImageSVG;
         mime = media.mime;
     }
   }
