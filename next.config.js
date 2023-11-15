@@ -8,8 +8,5 @@ module.exports = {
   env: {
     googleAPIKey: process.env.GOOGLE_API_KEY,
     basePath: basePath
-  },
-  publicRuntimeConfig: {
-    googleAPIKey: process.env.GOOGLE_API_KEY
   }
 };
