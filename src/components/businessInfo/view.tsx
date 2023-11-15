@@ -4,9 +4,9 @@ import BusinessInfoDto from "../../models/businessInfoDto";
 import SimpleClickableInfo from "../simpleClickableInfo/view";
 import Image from "next/image";
 import PhoneSVG from "../../../public/images/phone.svg";
-import CartSVG from "../../../public/images/cart.svg";
+import ShoppingSVG from "../../../public/images/shopping.svg";
 import InfoSVG from "../../../public/images/info.svg";
-import MapPinSVG from "../../../public/images/mappin.svg";
+import MapPinSVG from "../../../public/images/map_pin.svg";
 import { useRouter, usePathname } from "next/navigation";
 
 export interface Props {
@@ -53,7 +53,7 @@ export default function BusinessInfo({ info }: Props) {
       {info.keywords && (
         <div className="py-[5px] justify-start items-start gap-2.5 flex flex-wrap">
           <div className="w-6 h-6 relative">
-            <Image src={CartSVG} alt="phone" />
+            <Image src={ShoppingSVG} alt="phone" />
           </div>
           <div className="grow shrink basis-0 text-gray-700 text-base font-normal leading-snug">
             {info.keywords.join(", ")}

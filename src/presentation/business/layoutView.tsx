@@ -16,13 +16,13 @@ export default function View({
   children: React.ReactNode;
 }) {
   return (
-    <>
+    <div className="flex flex-col min-h-screen">
       <Topbar navs={NavButtonsDS} variant="secondary" />
       <GalleryPreview media={data.media} />
       <BusinessBrief info={data.info} />
       <BusinessTabs tabs={BusinessTabButtonsDS} />
       {children}
       <Footer />
-    </>
+    </div>
   );
 }

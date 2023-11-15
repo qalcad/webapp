@@ -1,3 +1,6 @@
+import React from "react";
+import View from "../src/presentation/home/view";
+
 export default function Page() {
-  return <h1>Hello, Next.js!</h1>;
+  return <View />;
 }
