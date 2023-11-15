@@ -1,6 +1,6 @@
 import React from "react";
 import MediaDto from "../../models/mediaDto";
-import CloseSVG from "../../../public/images/Close.svg";
+import CloseSVG from "../../../public/images/close.svg";
 import ArrowLeftSVG from "../../../public/images/arrow_left.svg";
 import ArrowRightSVF from "../../../public/images/arrow_right.svg";
 import Image from "next/image";
