@@ -19,5 +19,5 @@ async function getData(businessSlug: string) {
 
 export default async function Page({ params: { businessSlug } }) {
   const data = await getData(businessSlug);
-  return <LocationView data={data} googleAPIKey={process.env.googleAPIKey} />;
+  return <LocationView data={data} />;
 }

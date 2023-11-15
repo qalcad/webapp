@@ -4,15 +4,14 @@ import BusinessDto from "../../models/businessDto";
 
 export interface Props {
   data: BusinessDto;
-  googleAPIKey: string;
 }
 
-export default function View({ data, googleAPIKey }: Props) {
+export default function View({ data }: Props) {
   return (
     <MapManager
       coords={data.address.coords}
       label={data.info.name || ""}
-      googleAPIKey={googleAPIKey}
+      googleAPIKey={process.env.googleAPIKey}
     />
   );
 }
