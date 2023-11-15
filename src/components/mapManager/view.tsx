@@ -41,8 +41,8 @@ export default function MapManager({ coords, label, googleAPIKey }: Props) {
   }, []);
 
   return (
-    <div className="flex w-full py-2.5 min-h-[190px] md:min-h-[380px] bg-stone-200">
-      <div className="w-full" ref={mapRef} />
+    <div className="flex w-full py-2.5 min-h-[190px] md:min-h-[380px]">
+      <div className="w-full bg-stone-200" ref={mapRef} />
     </div>
   );
 }
