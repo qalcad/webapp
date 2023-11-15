@@ -11,8 +11,8 @@ export interface Props {
   variant: string;
   disabled: boolean;
   href?: string;
-  active: boolean;
-  onClick(event: React.MouseEvent<HTMLButtonElement>): void;
+  active?: boolean;
+  onClick?(event: React.MouseEvent<HTMLButtonElement>): void;
 }
 
 export default function BusinessTabButton({
