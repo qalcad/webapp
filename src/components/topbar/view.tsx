@@ -27,7 +27,7 @@ export default function Topbar({ navs, variant }: IProps) {
           </div>
         </div>
       )}
-      <div className="py-2 px-4 justify-end items-center gap-4 flex grow">
+      <div className="py-2 px-4 justify-center md:justify-end items-center gap-4 flex grow">
         <div className="justify-center items-center gap-2.5 flex  overflow-x-auto flex-wrap">
           {navs.map((item, index) => (
             <NavButton key={index} {...item} navVariant={variant} />

@@ -8,8 +8,8 @@ export default function Footer() {
   return (
     <div className="flex flex-col">
       <div className="w-full self-stretch h-[0px] border border-zinc-200"></div>
-      <div className="w-full p-8 bg-neutral-100 flex-col justify-center items-center gap-2.5 flex font-kanit">
-        <div className="justify-center items-center gap-2.5 flex md:flex-row flex-col">
+      <div className="w-full p-4 bg-neutral-100 flex-col justify-center items-center gap-2 flex font-kanit">
+        <div className="justify-center items-center gap-2 flex md:flex-row flex-col">
           <button
             disabled
             className="p-2 transition-all hover:transition-all text-zinc-300 text-xs font-normal leading-none"
