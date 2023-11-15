@@ -4,7 +4,7 @@ module.exports = {
   output: "export",
   images: { unoptimized: true },
   basePath: isProd ? "/webapp" : "",
-  assetsPrefix: isProd ? "/webapp": ""
+  assetPrefix: isProd ? "/webapp" : "",
   env: {
     googleAPIKey: process.env.GOOGLE_API_KEY
   }
