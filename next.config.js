@@ -6,9 +6,6 @@ module.exports = {
   images: { unoptimized: true },
   basePath: basePath,
   env: {
-    googleAPIKey: process.env.GOOGLE_API_KEY
-  },
-  publicRuntimeConfig: {
     googleAPIKey: process.env.GOOGLE_API_KEY,
     basePath: basePath
   }
