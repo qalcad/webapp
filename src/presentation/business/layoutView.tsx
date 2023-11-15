@@ -8,19 +8,19 @@ import BusinessTabButtonsDS from "../../dataSources/businessTabButtons";
 import BusinessDto from "../../models/businessDto";
 import BusinessBrief from "../../components/businessBrief/view";
 
-export default function View({
-  data,
-  children
-}: {
+export interface Props {
   data: BusinessDto;
+  businessSlug: string;
   children: React.ReactNode;
-}) {
+}
+
+export default function View({ data, businessSlug, children }: Props) {
   return (
     <div className="flex flex-col min-h-screen">
       <Topbar navs={NavButtonsDS} variant="secondary" />
       <GalleryPreview media={data.media} />
       <BusinessBrief info={data.info} />
-      <BusinessTabs tabs={BusinessTabButtonsDS} />
+      <BusinessTabs tabs={BusinessTabButtonsDS} businessSlug={businessSlug} />
       {children}
       <Footer />
     </div>

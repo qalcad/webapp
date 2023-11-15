@@ -13,19 +13,19 @@ export interface Props {
   variant: string;
   disabled: boolean;
   href?: string;
+  businessSlug: string;
 }
 
 export default function BusinessTabButton({
   label,
   variant,
   disabled,
-  href
+  href,
+  businessSlug
 }: Props) {
   const router = useRouter();
   const pathname = usePathname();
-  const match = pathname.match(/\/b\/([^\/\s]+)/) || "/b/test";
-  const suffix = pathname.replace(match[0], "");
-  const active = suffix == href;
+  const active = pathname == `/b/${businessSlug}${href}`;
   let Icon: React.ReactNode;
 
   switch (variant) {
@@ -48,10 +48,10 @@ export default function BusinessTabButton({
 
   const onClick = React.useCallback(
     async (event: React.MouseEvent<HTMLButtonElement>, href?: string) => {
-      if (href !== null && href !== undefined && suffix != href)
-        router.push(`${match[0]}/${href}`);
+      if (href !== null && href !== undefined && !active)
+        router.push(`/b/${businessSlug}${href}`);
     },
-    [pathname, router]
+    [pathname, router, active]
   );
 
   return (

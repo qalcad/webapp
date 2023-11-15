@@ -25,5 +25,9 @@ export default async function Layout({
   params: { businessSlug: string };
 }) {
   const data = await getData(businessSlug);
-  return <LayoutView data={centralHotelDS}>{children}</LayoutView>;
+  return (
+    <LayoutView data={centralHotelDS} businessSlug={businessSlug}>
+      {children}
+    </LayoutView>
+  );
 }
