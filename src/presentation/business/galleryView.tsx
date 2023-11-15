@@ -7,5 +7,5 @@ export interface Props {
 }
 
 export default function View({ data }: Props) {
-  return <GalleryList media={data.media.reverse() || []} />;
+  return <GalleryList media={data.media || []} />;
 }

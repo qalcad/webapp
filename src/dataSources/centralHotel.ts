@@ -32,6 +32,12 @@ export default {
       mime: "image/jpeg"
     },
     {
+      url: "/uploads/central-hotel/013.jpeg",
+      thumbnailUrl: "/uploads/central-hotel/014.jpeg",
+      extension: ".jpeg",
+      mime: "image/jpeg"
+    },
+    {
       url: "/uploads/central-hotel/002.mp4",
       thumbnailUrl: "/uploads/central-hotel/011.jpeg",
       extension: ".mp4",
