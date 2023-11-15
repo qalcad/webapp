@@ -2,6 +2,9 @@
 
 import React from "react";
 import { Loader } from "@googlemaps/js-api-loader";
+import getConfig from "next/config";
+
+const { serverRuntimeConfig, publicRuntimeConfig } = getConfig();
 
 export interface Props {
   coords: { lat: number; lng: number };
@@ -12,7 +15,7 @@ export default function MapManager({ coords, label }: Props) {
 
   React.useEffect(() => {
     const loader = new Loader({
-      apiKey: process.env.googleAPIKey || "",
+      apiKey: publicRuntimeConfig.googleAPIKey || "",
       version: "weekly"
     });
     loader.load().then(async () => {
