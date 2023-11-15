@@ -13,7 +13,7 @@ export interface Props {
   label: string;
   variant: string;
   href: string;
-  navVariant: string;
+  navVariant?: string;
 }
 
 export default function NavButton({ label, variant, href, navVariant }: Props) {

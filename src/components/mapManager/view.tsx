@@ -19,7 +19,7 @@ export default function MapManager({ coords, label }: Props) {
       const google = window.google;
       const { Map } = (await google.maps.importLibrary(
         "maps"
-      )) as google.maps.MapLibrary;
+      )) as google.maps.MapsLibrary;
       const { AdvancedMarkerElement, PinElement } =
         (await google.maps.importLibrary(
           "marker"

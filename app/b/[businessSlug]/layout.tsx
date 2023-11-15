@@ -1,8 +1,13 @@
 import React from "react";
 import LayoutView from "../../../src/presentation/business/layoutView";
-import BusinessDto from "../../../src/models/businessDto";
 import centralHotelDS from "../../../src/dataSources/centralHotel";
 import { notFound } from "next/navigation";
+
+export async function generateStaticParams() {
+  return [centralHotelDS].map((business) => ({
+    businessSlug: business.slug
+  }));
+}
 
 async function getData(businessSlug: string) {
   if (businessSlug != "central-hotel") {

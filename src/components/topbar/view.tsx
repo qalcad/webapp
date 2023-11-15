@@ -3,12 +3,12 @@ import NavButton, { Props as INavButton } from "../navButton/view";
 import Image from "next/image";
 import LogoSVG from "../../../public/images/logo_circular.svg";
 
-export interface IProps {
+export interface Props {
   navs: INavButton[];
   variant: string;
 }
 
-export default function Topbar({ navs, variant }: IProps) {
+export default function Topbar({ navs, variant }: Props) {
   return (
     <div
       className={`w-full justify-center items-start flex flex-wrap ${
@@ -30,7 +30,7 @@ export default function Topbar({ navs, variant }: IProps) {
       <div className="py-2 px-4 justify-center md:justify-end items-center gap-4 flex grow">
         <div className="justify-center items-center gap-2.5 flex  overflow-x-auto flex-wrap">
           {navs.map((item, index) => (
-            <NavButton key={index} {...item} navVariant={variant} />
+            <NavButton key={index} navVariant={variant} {...item} />
           ))}
         </div>
       </div>

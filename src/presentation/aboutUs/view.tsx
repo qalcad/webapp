@@ -7,11 +7,11 @@ import NavButtonsDS from "../../dataSources/navButtons";
 
 export default function View() {
   return (
-    <>
+    <div className="flex flex-col min-h-screen">
       <Topbar navs={NavButtonsDS} variant="secondary" />
       <AboutUsContents />
-      <ContactUs />
+      {/* {<ContactUs />} */}
       <Footer />
-    </>
+    </div>
   );
 }

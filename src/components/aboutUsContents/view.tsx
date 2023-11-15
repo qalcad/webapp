@@ -2,7 +2,7 @@ import React from "react";
 
 export default function AboutUsContents() {
   return (
-    <div className="w-full px-8 pt-[90px] pb-[67px] gap-2.5 flex-col justify-center items-center flex font-kanit">
+    <div className="w-full p-8 grow gap-2.5 flex-col justify-center items-center flex font-kanit">
       <h1 className="text-center text-black text-5xl font-medium leading-[55px]">
         About Us
       </h1>

@@ -10,7 +10,7 @@ export interface Props {
 
 export default function BusinessBrief({ info }: Props) {
   return (
-    <div className="w-full p-8 md:items-start items-center flex font-kanit gap-2.5 flex-col md:flex-row">
+    <div className="w-full px-8 py-4 md:items-start items-center flex font-kanit gap-2.5 flex-col md:flex-row">
       <div className="grow shrink basis-0 flex-col justify-center items-center md:items-start flex gap-2.5">
         <div className="justify-start items-center md:items-baseline gap-x-2.5 flex flex-col md:flex-row flex-wrap">
           <div className="justify-start items-center md:item gap-x-2.5 flex flex-col md:flex-row">

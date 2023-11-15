@@ -23,7 +23,7 @@ export default function BusinessInfo({ info }: Props) {
   }, [router, pathname]);
 
   return (
-    <div className="w-full p-8 flex-col justify-center items-start flex font-kanit">
+    <div className="w-full px-8 py-2.5 flex-col justify-center items-start flex font-kanit">
       {info.formattedPhoneNumbers && (
         <div className="py-[5px] justify-start items-start gap-2.5 flex flex-wrap">
           <div className="w-6 h-6 relative">
