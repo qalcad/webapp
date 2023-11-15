@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import Image from "next/image";
 import BusinessHomeSVG from "../../../public/images/business_info.svg";
@@ -6,14 +5,14 @@ import BusinessGallerySVG from "../../../public/images/image.svg";
 import BusinessLocationSVG from "../../../public/images/map.svg";
 import BusinessNewsSVG from "../../../public/images/news.svg";
 import BusinessInquirySVG from "../../../public/images/inquiry.svg";
-import { useRouter, usePathname } from "next/navigation";
 
 export interface Props {
   label: string;
   variant: string;
   disabled: boolean;
   href?: string;
-  businessSlug: string;
+  active: boolean;
+  onClick(event: React.MouseEvent<HTMLButtonElement>): void;
 }
 
 export default function BusinessTabButton({
@@ -21,11 +20,9 @@ export default function BusinessTabButton({
   variant,
   disabled,
   href,
-  businessSlug
+  active,
+  onClick
 }: Props) {
-  const router = useRouter();
-  const pathname = usePathname();
-  const active = pathname == `/b/${businessSlug}${href}`;
   let Icon: React.ReactNode;
 
   switch (variant) {
@@ -46,14 +43,6 @@ export default function BusinessTabButton({
       Icon = <Image src={BusinessHomeSVG} alt={label} />;
   }
 
-  const onClick = React.useCallback(
-    async (event: React.MouseEvent<HTMLButtonElement>, href?: string) => {
-      if (href !== null && href !== undefined && !active)
-        router.push(`/b/${businessSlug}${href}`);
-    },
-    [pathname, router, active]
-  );
-
   return (
     <button
       disabled={disabled}
@@ -64,7 +53,7 @@ export default function BusinessTabButton({
           ? "hover:border-stone-200 active:border-stone-300"
           : ""
       }`}
-      onClick={(event) => onClick(event, href)}
+      onClick={onClick}
     >
       <div className="w-6 h-6 relative">{Icon}</div>
       <div className="text-gray-700 text-lg font-normal">{label}</div>
