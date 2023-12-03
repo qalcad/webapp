@@ -6,13 +6,10 @@ export default {
     verified: true,
     slogan: null,
     businessType: "Hotel",
-    formattedPhoneNumbers: ["+252770768492", "+252770768492"],
-    formattedAddress: "Suuq bacad, Mogadishu",
+    formattedPhoneNumbers: ["+252617876828", "+252627876928"],
+    formattedAddress: "Banadir highschool for girls, Suuq bacaad, Mogadishu",
     keywords: ["Restaurant", "Coffee", "Wedding hall"],
-    description: `Are you looking for a juicy burger? Instead of patties made using
-      ground meat as in existing handmade burgers, we use 140g |of beef cut
-      daily to provide freshness, and we pursue novelty in burgers with a
-      special gravy sauce.`
+    description: `Contact us at calicarale64@gmail.com`
   },
   address: {
     coords: { lat: 2.05481, lng: 45.339937 }
